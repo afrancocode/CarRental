@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D807985-CF50-477F-B246-0D82526B1B54}</ProjectGuid>
+    <ProjectGuid>{A2BA0191-2307-4A0D-B294-0BC928BB6769}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CarRental.Business.Bootstrapper</RootNamespace>
-    <AssemblyName>CarRental.Business.Bootstrapper</AssemblyName>
+    <RootNamespace>CarRental.Business</RootNamespace>
+    <AssemblyName>CarRental.Business</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,19 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Discovery" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MEFLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,25 +46,9 @@
       <Project>{578be647-a729-4f4e-9ad6-f3ff0d4bab50}</Project>
       <Name>CarRental.Business.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CarRental.Business.Contracts\CarRental.Business.Contracts.csproj">
-      <Project>{3ff58f5a-a423-42b3-a6da-2270ee3b4d3d}</Project>
-      <Name>CarRental.Business.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CarRental.Business.Entities\CarRental.Business.Entities.csproj">
       <Project>{02fe66be-7d08-4830-ad62-042f00012085}</Project>
       <Name>CarRental.Business.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRental.Business.Managers\CarRental.Business.Managers.csproj">
-      <Project>{1935ee5d-9e58-4a45-8051-733c08b28c40}</Project>
-      <Name>CarRental.Business.Managers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRental.Business\CarRental.Business.csproj">
-      <Project>{a2ba0191-2307-4a0d-b294-0bc928bb6769}</Project>
-      <Name>CarRental.Business</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRental.Common.Contracts\CarRental.Common.Contracts.csproj">
-      <Project>{e8a254cb-d685-40df-9bcc-9152800db12d}</Project>
-      <Name>CarRental.Common.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\CarRental.Common\CarRental.Common.csproj">
       <Project>{37ab8c94-7800-41a6-a176-45e48308a507}</Project>
@@ -94,18 +66,13 @@
       <Project>{c48811d2-b5b7-4d86-a531-2c92f30512bf}</Project>
       <Name>Core.Common.Contracts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Core.Common.ServiceModel\Core.Common.ServiceModel.csproj">
-      <Project>{140fee5d-790f-4db1-9a1d-bfad5f40abb7}</Project>
-      <Name>Core.Common.ServiceModel</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Core.Common\Core.Common.csproj">
       <Project>{493cd021-bc92-462b-b42d-72d524b210e0}</Project>
       <Name>Core.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Folder Include="Business Engines\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
