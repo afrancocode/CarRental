@@ -32,6 +32,8 @@ namespace CarRental.Business.Managers
 
 		#region IAccountService operations
 
+		[PrincipalPermission(SecurityAction.Demand, Role = Security.CarRentalAdminRole)]
+		[PrincipalPermission(SecurityAction.Demand, Name = Security.CarRentalUser)]
 		public Account GetCustomerAccountInfo(string loginEmail)
 		{
 			return ExecuteFaultHandledOperation(() =>
@@ -45,16 +47,22 @@ namespace CarRental.Business.Managers
 					throw new FaultException<NotFoundException>(ex, ex.Message);
 				}
 
+				ValidateAuthorization(accountEntity);
+
 				return accountEntity;
 			});
 		}
 
 		[OperationBehavior(TransactionScopeRequired = true)]
+		[PrincipalPermission(SecurityAction.Demand, Role = Security.CarRentalAdminRole)]
+		[PrincipalPermission(SecurityAction.Demand, Name = Security.CarRentalUser)]
 		public void UpdateCustomerAccountInfo(Account account)
 		{
 			ExecuteFaultHandledOperation(() =>
 			{
 				IAccountRepository accountRepository = _DataRepositoryFactory.GetDataRepository<IAccountRepository>();
+
+				ValidateAuthorization(account);
 
 				Account updatedAccount = accountRepository.Update(account);
 			});
