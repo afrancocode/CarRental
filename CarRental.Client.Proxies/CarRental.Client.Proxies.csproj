@@ -31,8 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +43,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service Proxies\AccountClient.cs" />
+    <Compile Include="Service Proxies\InventoryClient.cs" />
+    <Compile Include="Service Proxies\RentalClient.cs" />
+    <Compile Include="ServiceFactory.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Service Proxies\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CarRental.Client.Contracts\CarRental.Client.Contracts.csproj">
       <Project>{9d6af3f5-c55b-4aa5-9073-449514ebf038}</Project>
