@@ -16,5 +16,13 @@ namespace CarRental.Web.Controllers
 		{
 			return View();
 		}
+
+		[HttpGet]
+		[GET("home/my")]
+		[Authorize]
+		public ActionResult MyAccount()
+		{
+			return View();
+		}
 	}
 }
